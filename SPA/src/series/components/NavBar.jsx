@@ -27,6 +27,13 @@ export const Navbar = () => {
                     >
                         BetterCallSaul
                     </NavLink>
+
+                    <NavLink 
+                        className = { ({ isActive }) => `nav-item nav-link ${ isActive ? 'active text-info' : '' }` }
+                        to="/Search"
+                    >
+                        Search
+                    </NavLink>
                     
                 </div>
             </div>

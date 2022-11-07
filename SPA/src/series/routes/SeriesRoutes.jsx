@@ -2,7 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 
 import { Navbar } from '../components'
 
-import { BetterCallSaulPage, BreakingBadPage } from '../pages'
+import { BetterCallSaulPage, BreakingBadPage, PersonajePage, SearchPage } from '../pages'
 
 export const SeriesRoutes = () => {
     return (
@@ -14,6 +14,8 @@ export const SeriesRoutes = () => {
                 <Routes>
                     <Route path="/BreakingBad" element={ <BreakingBadPage/> }/>
                     <Route path="/BetterCallSaul" element={ <BetterCallSaulPage/> }/>
+                    <Route path="/Personaje" element={ <PersonajePage/> }/>
+                    <Route path="/Search" element={ <SearchPage/> }/>
 
                     <Route path="/*" element={ <Navigate to={ "/BreakingBad" } /> }/>
                 </Routes>
