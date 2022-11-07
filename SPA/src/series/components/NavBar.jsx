@@ -27,6 +27,7 @@ export const Navbar = () => {
                     >
                         BetterCallSaul
                     </NavLink>
+                    
                 </div>
             </div>
 
