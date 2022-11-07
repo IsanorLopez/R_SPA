@@ -12,6 +12,7 @@ export const getPersonajesSerie = async( category ) => {
         occupation: p.occupation[0],
         nickname : p.nickname,
         status : p.status,
+        isAlive : (p.status === 'Alive') ? true : false,
         img : p.img
     }));
 
