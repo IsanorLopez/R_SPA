@@ -1,6 +1,6 @@
 
 export const getPersonajesSerie = async( category ) => {
-    const Url = `https://www.breakingbadapi.com/api/characters?category=${category}`;
+    const Url = `https://www.breakingbadapi.com/api/characters?category=${ category }`;
 
     const resp = await fetch(Url);
 
@@ -17,4 +17,16 @@ export const getPersonajesSerie = async( category ) => {
     }));
 
     return personajes;
+}
+
+export const getPersonajeSerie = async( id ) => {
+    const Url = `https://www.breakingbadapi.com/api/characters/${ id }`;
+
+    const resp = await fetch( Url );
+
+    const data = await resp.json();
+
+    const personaje = data[0];
+
+    return personaje;
 }

@@ -14,7 +14,7 @@ export const useFetchPersonajes = (category) => {
     }
 
     useEffect( () => {
-       getPersonajes();
+      getPersonajes();
     }, []);
 
     return {

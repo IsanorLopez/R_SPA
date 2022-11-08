@@ -14,7 +14,7 @@ export const SeriesRoutes = () => {
                 <Routes>
                     <Route path="/BreakingBad" element={ <BreakingBadPage/> }/>
                     <Route path="/BetterCallSaul" element={ <BetterCallSaulPage/> }/>
-                    <Route path="/Personaje" element={ <PersonajePage/> }/>
+                    <Route path="/Personaje/:Id" element={ <PersonajePage/> }/>
                     <Route path="/Search" element={ <SearchPage/> }/>
 
                     <Route path="/*" element={ <Navigate to={ "/BreakingBad" } /> }/>
