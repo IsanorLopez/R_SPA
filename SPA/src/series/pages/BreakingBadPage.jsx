@@ -1,4 +1,4 @@
-import { PersonajesGrid } from "../components/PersonajesGrid"
+import { PersonajesGrid } from "../components"
 
 export const BreakingBadPage = () => {
 

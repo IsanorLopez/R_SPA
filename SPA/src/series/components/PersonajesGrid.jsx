@@ -1,4 +1,4 @@
-import { useFetchPersonajes } from "../hook/useFetchPersonajes";
+import { useFetchPersonajes } from "../hook/";
 import { PersonajeCard } from "./PersonajeCard";
 
 export const PersonajesGrid = ({ categoria }) => {

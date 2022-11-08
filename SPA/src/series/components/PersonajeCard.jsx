@@ -5,9 +5,7 @@ export const PersonajeCard = ({
     img,
     name,
     nickname,
-    occupation,
-    status,
-    isAlive
+    status
 }) => {
 
   return (

@@ -12,7 +12,6 @@ export const getPersonajesSerie = async( category ) => {
         occupation: p.occupation[0],
         nickname : p.nickname,
         status : p.status,
-        isAlive : (p.status === 'Alive') ? true : false,
         img : p.img
     }));
 
@@ -29,4 +28,25 @@ export const getPersonajeSerie = async( id ) => {
     const personaje = data[0];
 
     return personaje;
+}
+
+export const getResultadosPersonajes = async( nombre ) => {
+    const Url = `https://www.breakingbadapi.com/api/characters?name=${ nombre }`;
+
+    const resp = await fetch(Url);
+
+    const data = await resp.json();
+
+    const personajes = data.map( p => ({
+        id: p.char_id,
+        name: p.name,
+        occupation: p.occupation[0],
+        nickname : p.nickname,
+        status : p.status,
+        img : p.img
+    }));
+
+    console.log('R:', personajes);
+
+    return personajes;
 }
