@@ -30,7 +30,7 @@ export const PersonajePage = () => {
           <img 
             src={ personaje.img }
             alt={ personaje.name }
-            className="img"
+            className="img animate__animated animate__fadeInLeft"
           />
         </div>
 

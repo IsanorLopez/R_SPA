@@ -13,7 +13,7 @@ export const PersonajeCard = ({
   return (
     <div className="col">
         <div className="card">
-            <img src={ img } className="card-img-top card img" alt="..."/>
+            <img src={ img } className="card-img-top card img animate__animated animate__fadeIn" alt="..."/>
 
             <div className="card-body">
                 <h5 className="card-title">{ name }</h5>
