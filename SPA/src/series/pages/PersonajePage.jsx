@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router-dom'
+import { Navigate, useNavigate, useParams } from 'react-router-dom'
 
 import { useFetchPersonaje } from '../hook';
 
@@ -12,6 +12,10 @@ export const PersonajePage = () => {
 
   const onNavigateBack = () => {
     navigate(-1);
+  }
+
+  if (!personaje) {
+    return <Navigate to="/BreakingBad" />
   }
 
   return (

@@ -4,8 +4,9 @@ export const BreakingBadPage = () => {
 
     return (
         <>
-            <h1>BreakingBadPage</h1>
-            <PersonajesGrid categoria={'Breaking+Bad'} />
+            <div className="mt-2 mb-5">
+                <PersonajesGrid categoria={'Breaking+Bad'} />
+            </div>
         </>
     )
 }
