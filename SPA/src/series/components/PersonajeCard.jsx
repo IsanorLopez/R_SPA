@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export const PersonajeCard = ({
     id,
@@ -26,3 +27,12 @@ export const PersonajeCard = ({
     </div>
   )
 }
+
+PersonajeCard.propTypes = {
+    id: PropTypes.number.isRequired,
+    img: PropTypes.string.isRequired, 
+    name: PropTypes.string.isRequired, 
+    nickname: PropTypes.string.isRequired, 
+    status: PropTypes.string.isRequired
+}
+

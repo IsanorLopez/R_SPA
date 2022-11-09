@@ -1,6 +1,6 @@
 import { PersonajeCard } from './'
 
-export const PersonajesResults = ({personajes = []}) => {
+export const PersonajesResults = ({ personajes = [] }) => {
     return (
         <div>
           {
@@ -10,4 +10,8 @@ export const PersonajesResults = ({personajes = []}) => {
           }
         </div>
     )
+}
+
+PersonajesResults.defaultProps = {
+  personajes: []
 }

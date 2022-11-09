@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { useFetchPersonajes } from "../hook/";
 
 import { PersonajeCard } from "./PersonajeCard";
@@ -23,4 +25,8 @@ export const PersonajesGrid = ({ categoria }) => {
             </div>
         </>
     )
+}
+
+PersonajesGrid.propTypes = { 
+    categoria: PropTypes.string.isRequired
 }
