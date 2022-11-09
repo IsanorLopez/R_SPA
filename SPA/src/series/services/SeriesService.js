@@ -1,50 +1,66 @@
+import axios from "axios";
 
-export const getPersonajesSerie = async( category ) => {
-    const Url = `https://www.breakingbadapi.com/api/characters?category=${ category }`;
+export const getPersonajesSerie = async ( category ) => {
 
-    const resp = await fetch(Url);
+    let personajes = [];
 
-    const data = await resp.json();
+    await axios.get(
+        `https://www.breakingbadapi.com/api/characters?category=${ category }`
+    ).then((response) => {
 
-    const personajes = data.map( p => ({
-        id: p.char_id,
-        name: p.name,
-        occupation: p.occupation[0],
-        nickname : p.nickname,
-        status : p.status,
-        img : p.img
-    }));
+        personajes = response.data.map( p => ({
+            id: p.char_id,
+            name: p.name,
+            occupation: p.occupation[0],
+            nickname : p.nickname,
+            status : p.status,
+            img : p.img
+        }));
+
+    }).catch((error) => {
+        console.log(error);
+    });
 
     return personajes;
 }
 
 export const getPersonajeSerie = async( id ) => {
-    const Url = `https://www.breakingbadapi.com/api/characters/${ id }`;
 
-    const resp = await fetch( Url );
+    let personaje = {};
 
-    const data = await resp.json();
+    await axios.get(
+        `https://www.breakingbadapi.com/api/characters/${ id }`
+    ).then((response) => {
 
-    const personaje = data[0];
+        personaje = response.data[0];
+
+    }).catch((error) => {
+        console.log(error);
+    });
 
     return personaje;
 }
 
 export const getResultadosPersonajes = async( nombre ) => {
-    const Url = `https://www.breakingbadapi.com/api/characters?name=${ nombre }`;
 
-    const resp = await fetch(Url);
+    let personajes = [];
 
-    const data = await resp.json();
+    await axios.get(
+        `https://www.breakingbadapi.com/api/characters?name=${ nombre }`
+    ).then((response) => {
 
-    const personajes = data.map( p => ({
-        id: p.char_id,
-        name: p.name,
-        occupation: p.occupation[0],
-        nickname : p.nickname,
-        status : p.status,
-        img : p.img
-    }));
+        personajes = response.data.map( p => ({
+            id: p.char_id,
+            name: p.name,
+            occupation: p.occupation[0],
+            nickname : p.nickname,
+            status : p.status,
+            img : p.img
+        }));
+
+    }).catch((error) => {
+        console.log(error);
+    });
 
     return personajes;
 }
