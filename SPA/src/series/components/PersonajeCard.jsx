@@ -16,7 +16,7 @@ export const PersonajeCard = ({
             <div className="card-body">
                 <h5 className="card-title">{ name }</h5>
                 <p className="card-text">{ nickname }</p>
-                <Link to={`/Personaje/${ id }`} className="btn btn-primary fullWidth">About</Link>
+                <Link to={`/Personaje/${ id }`} className="btn btn-primary w-100">About</Link>
             </div>
 
             <div className= "card-footer">
