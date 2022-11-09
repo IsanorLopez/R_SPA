@@ -37,7 +37,7 @@ export const LoginPage = () => {
                 
                     <h2 className="card-title mb-5">Sign In</h2>
                             
-                    <p className="text-danger animate__animated animate__fadeIn" style={{ display: showError ? '' : 'none' }}> Wrong data!!!</p>
+                    <p className="text-danger animate__animated animate__fadeIn" style={{ display: showError ? '' : 'none' }}> <b>Wrong data!!!</b> </p>
 
                     <input type="email" className="form-control mt-3" placeholder="name@example.com" value={ mailValue } onChange={ onChangeMail }/>
                     <input type="password" className="form-control mt-3" placeholder="******" value={ passValue } onChange={ onChangePass }/>
