@@ -4,7 +4,7 @@ export const BetterCallSaulPage = () => {
 
     return (
         <>
-            <div className="mt-2 mb-5">
+            <div>
                 <PersonajesGrid categoria={'Better+Call+Saul'} />
             </div>
         </>

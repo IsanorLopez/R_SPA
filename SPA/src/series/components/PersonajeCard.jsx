@@ -10,13 +10,13 @@ export const PersonajeCard = ({
 
   return (
     <div className="col">
-        <div className="card">
+        <div className="card mt-3 mb-3">
             <img src={ img } className="card-img-top card img animate__animated animate__fadeIn" alt="..."/>
 
             <div className="card-body">
                 <h5 className="card-title">{ name }</h5>
                 <p className="card-text">{ nickname }</p>
-                <Link to={`/Personaje/${ id }`} className="btn btn-primary fullWidth">Detalles</Link>
+                <Link to={`/Personaje/${ id }`} className="btn btn-primary fullWidth">About</Link>
             </div>
 
             <div className= "card-footer">
