@@ -15,7 +15,7 @@ export const LoginPage = () => {
     const onLogin = (email, password) => {
 
         if (email === 'correo@gmail.com' && password === '123456') {
-            navigate('/', {
+            navigate('/BreakingBad', {
                 replace: true
             });
         } else {
@@ -33,12 +33,9 @@ export const LoginPage = () => {
         <div className="m-0 vh-100 row vh-100 justify-content-center align-items-center">
 
             <div className="col-auto text-center card shadow p-3 mb-5 bg-white rounded">
-                        
-                <img src={ '/src/assets/logo.png' } className="card-img-top" alt="..."/>
-                        
                 <div className="card-body">
                 
-                    <h5 className="card-title mt-3">Sign In</h5>
+                    <h2 className="card-title mb-5">Sign In</h2>
                             
                     <p className="text-danger animate__animated animate__fadeIn" style={{ display: showError ? '' : 'none' }}> Wrong data!!!</p>
 

@@ -10,7 +10,7 @@ export const PersonajeCard = ({
 
   return (
     <div className="col">
-        <div className="card mt-3 mb-3">
+        <div className="card mt-3 mb-3 shadow mb-5 bg-white rounded">
             <img src={ img } className="card-img-top card img animate__animated animate__fadeIn" alt="..."/>
 
             <div className="card-body">
