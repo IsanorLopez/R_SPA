@@ -46,7 +46,5 @@ export const getResultadosPersonajes = async( nombre ) => {
         img : p.img
     }));
 
-    console.log('R:', personajes);
-
     return personajes;
 }

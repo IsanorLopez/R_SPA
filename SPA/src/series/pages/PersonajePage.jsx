@@ -39,7 +39,7 @@ export const PersonajePage = () => {
           
           <ul className="list-group list-group-flush">
             <li className="list-group-item"> <b>NickName:</b> { personaje.nickname } </li>
-            <li className="list-group-item"> <b>Bithday:</b> { personaje.birthday } </li>
+            <li className="list-group-item"> <b>Birthday:</b> { personaje.birthday } </li>
             <li className="list-group-item"> <b>Status:</b> { personaje.status } </li>
           </ul>
 

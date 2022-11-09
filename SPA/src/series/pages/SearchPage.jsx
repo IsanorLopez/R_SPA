@@ -1,29 +1,61 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import queryString from 'query-string'
+import { useLocation, useNavigate } from "react-router-dom";
 
 import { PersonajesResults } from "../components";
 import { getResultadosPersonajes } from "../services/SeriesService";
 
 export const SearchPage = () => {
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [inputValue, setInputValue] = useState('');
   const [characters, setCharacters] = useState([]);
 
+  const [showError, setShowError]     = useState(false);
+  const [showSearch, setShowSearch]   = useState(true);
+  
+  let { q = '' } = queryString.parse( location.search );
+
+  useEffect(() => {
+    if (q !== '') {
+      consultar(q);
+    }
+  }, [])
+
   const onInputChange = (event) => {
+
+    //Cuando se modifica el nombre limpio y muestro mensajes
+    setShowSearch(true);
+    setShowError(false);
+    setCharacters([]);
+
     setInputValue(event.target.value)
   }
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
+  const consultar = async (nombre) => {
 
-    if (inputValue.trim().length < 1) return;
-
-    const personajes = await getResultadosPersonajes(inputValue);
+    setShowSearch(false); //Se oculta el mensaje en espera de resultados
+    setInputValue(nombre);
+    const personajes = await getResultadosPersonajes(nombre);
+    
+    if (personajes.length === 0) {
+      setShowError(true); //Se muestra el mensaje cuando no se obtuvieron resultados
+    }
 
     setCharacters(personajes);
   }
 
-  const showSearch = (characters.length === 0) && (inputValue.length === 0);
-  const showError =  (characters.length === 0) && (inputValue.length > 0);
+  const onSubmit = (event) => {
+    event.preventDefault();
+
+    if (inputValue.trim().length < 1) return;
+
+    consultar(inputValue);
+
+    navigate(`?q=${ inputValue }`);
+  }
 
   return (
     <>
@@ -59,9 +91,9 @@ export const SearchPage = () => {
           <div className="alert alert-primary animate__animated animate__fadeIn" style={{ display: showSearch ? '' : 'none' }}>
             Search a character
           </div>
-          
+
           <div className="alert alert-danger animate__animated animate__fadeIn" style={{ display: showError ? '' : 'none' }}>
-            There's no result whit <b> { inputValue } </b>
+            There's no results whit <b>{ inputValue }</b>
           </div>
 
           {
